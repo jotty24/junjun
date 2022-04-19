@@ -1,0 +1,68 @@
+<script
+  id="purecloud-webchat-js"
+  type="text/javascript"
+  src="https://apps.usw2.pure.cloud/webchat/jsapi-v1.js"
+  region="us-west-2"
+  org-guid="9a0e630d-c44b-42ad-af96-1b119ef0bfb4"
+  deployment-key="d3c2c85e-c7d3-4d58-8ffb-3f32a61c0c4b"
+></script>
+
+let chatConfig = {
+  "webchatAppUrl": "https://apps.usw2.pure.cloud/webchat",
+  "webchatServiceUrl": "https://realtime.usw2.pure.cloud:443",
+  "orgId": "3822",
+  "orgGuid": "9a0e630d-c44b-42ad-af96-1b119ef0bfb4",
+  "orgName": "javelinodev",
+  "queueName": "ACD_Queue",
+  "logLevel": "DEBUG",
+  "locale": "en",
+  "data": {
+    "firstName": "Dennis",
+    "lastName": "Pinzauti",
+    "addressStreet": "1897 Awsez View",
+    "addressCity": "Famdero",
+    "addressPostalCode": "44045",
+    "addressState": "SD",
+    "phoneNumber": "(756) 496-7051",
+    "customField1Label": "",
+    "customField1": "",
+    "customField2Label": "",
+    "customField2": "",
+    "customField3Label": "",
+    "customField3": ""
+  },
+  "companyLogo": {
+    "width": 600,
+    "height": 149,
+    "url": "https://d3a63qt71m2kua.cloudfront.net/developer-tools/2280/assets/images/PC-blue-nomark.png"
+  },
+  "companyLogoSmall": {
+    "width": 25,
+    "height": 25,
+    "url": "https://d3a63qt71m2kua.cloudfront.net/developer-tools/2280/assets/images/companylogo.png"
+  },
+  "agentAvatar": {
+    "width": 462,
+    "height": 462,
+    "url": "https://d3a63qt71m2kua.cloudfront.net/developer-tools/2280/assets/images/agent.jpg"
+  },
+  "welcomeMessage": "You have entered the Dragon. Please wait for an agent to assist you.",
+  "cssClass": "webchat-frame",
+  "css": {
+    "width": "100%",
+    "height": "100%"
+  }
+};
+
+ININ.webchat.create(chatConfig, function(err, webchat) {
+    if (err) {
+        console.error(err);
+        throw err;
+    }
+
+    webchat.renderPopup({
+        width: 400,
+        height: 400,
+        title: 'Chat'
+    });
+});
